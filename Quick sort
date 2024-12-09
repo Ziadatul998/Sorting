@@ -1,0 +1,24 @@
+# Data yang akan diurutkan
+data = [64, 34, 25, 12, 22, 11, 90]
+print("Data sebelum diurutkan:", data)
+
+# Implementasi Quick Sort
+stack = [(0, len(data) - 1)]  
+while stack:
+    low, high = stack.pop()
+    if low < high:
+        pivot = data[high]  
+        i = low - 1  
+        
+        for j in range(low, high):
+            if data[j] <= pivot:
+                i += 1
+                data[i], data[j] = data[j], data[i]
+
+        i += 1
+        data[i], data[high] = data[high], data[i]
+
+        stack.append((low, i - 1))  
+        stack.append((i + 1, high))  
+
+print("Data setelah diurutkan:", data)
