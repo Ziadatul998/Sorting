@@ -1,0 +1,14 @@
+# Data yang akan diurutkan
+data = [64, 34, 25, 12, 22, 11, 90]
+print("Data sebelum diurutkan:", data)
+
+# Implementasi Insertion Sort
+for i in range(1, len(data)):
+    key = data[i]  
+    j = i - 1
+    while j >= 0 and data[j] > key:
+        data[j + 1] = data[j]
+        j -= 1
+    data[j + 1] = key  
+
+print("Data setelah diurutkan:", data)
